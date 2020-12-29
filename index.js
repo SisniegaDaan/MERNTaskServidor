@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json({extended: true}));
 
 //Creacion del puerto de app
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 //Importar rutas (https://localhost:4000/api/usuarios)
 app.use("/api/usuarios", require("./routes/usuarios"));
@@ -27,6 +27,6 @@ app.use("/api/proyectos", require("./routes/proyectos"));
 app.use("/api/tareas", require("./routes/tareas"));
 
 //Arrancar el servidor
-app.listen(PORT, "0.0.0.0", () => { // "0.0.0.0" Para Heroku
-    console.log(`El servidor está funcionando en el puerto ${PORT}`)
+app.listen(port, "0.0.0.0", () => { // "0.0.0.0" Para Heroku
+    console.log(`El servidor está funcionando en el puerto ${port}`)
 });
